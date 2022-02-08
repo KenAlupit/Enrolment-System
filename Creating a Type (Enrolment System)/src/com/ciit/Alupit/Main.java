@@ -10,8 +10,12 @@ public class Main {
 		InputStreamReader input = new InputStreamReader(System.in);
 		BufferedReader reader = new BufferedReader (input);
 		
-		LinkedList<String> Name= new LinkedList<String>();
-		LinkedList<String> BirthDate= new LinkedList<String>();
+		LinkedList<String> StudentName= new LinkedList<String>();
+		LinkedList<String> StudentBirthDate= new LinkedList<String>();
+		LinkedList<String> TeacherName= new LinkedList<String>();
+		LinkedList<String> TeacherBirthDate= new LinkedList<String>();
+		LinkedList<String> RegistrarName= new LinkedList<String>();
+		LinkedList<String> RegistrarBirthDate= new LinkedList<String>();
 		LinkedList<String> UserCreationDate= new LinkedList<String>();
 		LinkedList<String> StudentID= new LinkedList<String>();
 		LinkedList<String> Course= new LinkedList<String>();
@@ -44,9 +48,9 @@ do {
 			case 'S':
 			case 's':
 				System.out.println("Name:");
-				User.ChangeName(reader.readLine());
+				User.ChangeStudentName(reader.readLine());
 				System.out.println("Birthdate:");
-				User.ChangeBirthDate(reader.readLine());
+				User.ChangeStudentBirthDate(reader.readLine());
 				System.out.println("Fill out the information below");
 				System.out.println("Course:");
 				System.out.println("[A] - Animation[Tech-voc]");
@@ -81,21 +85,21 @@ do {
 					Student.ChangeYearLevel("Grade 12");
 					break;
 				}
-				Name.add(User.DisplayName());
-				BirthDate.add(User.DisplayBirthDate());
+				StudentName.add(User.DisplayStudentName());
+				StudentBirthDate.add(User.DisplayStudentBirthDate());
 				UserCreationDate.add(User.DisplayUserCreationDate());
 				StudentID.add(Student.DisplayStudentID());
 				Course.add(Student.DisplayCourse());
 				YearLevel.add(Student.DisplayYearLevel());
-				User.DisplayUserInfo();
+				User.DisplayStudentUserInfo();
 				Student.studentdisplayinfo();
 				break;
 			case 'T':
 			case 't':
 				System.out.println("Name:");
-				User.ChangeName(reader.readLine());
+				User.ChangeTeacherName(reader.readLine());
 				System.out.println("Birthdate:");
-				User.ChangeBirthDate(reader.readLine());
+				User.ChangeTeacherBirthDate(reader.readLine());
 				System.out.println("Department");
 				System.out.println("[A] - Core Program");
 				System.out.println("[S] - Specialization Program");
@@ -115,21 +119,21 @@ do {
 					Teacher.ChangeDepartment("General Education Program");
 					break;
 				}
-				Name.add(User.DisplayName());
-				BirthDate.add(User.DisplayBirthDate());
+				TeacherName.add(User.DisplayTeacherName());
+				TeacherBirthDate.add(User.DisplayTeacherBirthDate());
 				UserCreationDate.add(User.DisplayUserCreationDate());
 				TeacherID.add(Teacher.DisplayTeacherID());
 				Department.add(Teacher.DisplayDepartment());
-				User.DisplayUserInfo();
+				User.DisplayRegistrarUserInfo();
 				Teacher.TeacherDisplayInfo();
 				break;
 				
 			case 'R':
 			case 'r':
 				System.out.println("Name:");
-				User.ChangeName(reader.readLine());
+				User.ChangeRegistrarName(reader.readLine());
 				System.out.println("Birthdate:");
-				User.ChangeBirthDate(reader.readLine());
+				User.ChangeRegistrarBirthDate(reader.readLine());
 				System.out.println("Role:");
 				System.out.println("[C] - Cashier");
 				System.out.println("[R] - Records");
@@ -149,9 +153,12 @@ do {
 					Registrar.ChangeRole("Manager");
 					break;
 				}
+				RegistrarName.add(User.DisplayRegistrarName());
+				RegistrarBirthDate.add(User.DisplayRegistrarBirthDate());
+				UserCreationDate.add(User.DisplayUserCreationDate());
 				RegistrarID.add(Registrar.DisplayRegistrarID());
 				Role.add(Registrar.DisplayRole());
-				User.DisplayUserInfo();
+				User.DisplayRegistrarUserInfo();
 				Registrar.RegistrarDisplayInfo();
 				break;
 			}
@@ -170,9 +177,9 @@ do {
 				String InputID = reader.readLine();
 				if(StudentID.contains(InputID)) {
 					int Index = StudentID.indexOf(InputID);
-					System.out.println("Name: " + Name.get(Index));
+					System.out.println("Name: " + StudentName.get(Index));
 					System.out.println("Student ID: " + InputID);
-					System.out.println("Birthdate: " + BirthDate.get(Index));
+					System.out.println("Birthdate: " + StudentBirthDate.get(Index));
 					System.out.println("Account Created: " + UserCreationDate.get(Index));
 					System.out.println("Course: " + Course.get(Index));
 					System.out.println("Year Level: " + YearLevel.get(Index));
@@ -187,9 +194,9 @@ do {
 				InputID = reader.readLine();
 				if(TeacherID.contains(InputID)) {
 					int Index = TeacherID.indexOf(InputID);
-					System.out.println("Name: " + Name.get(Index));
+					System.out.println("Name: " + TeacherName.get(Index));
 					System.out.println("Teacher ID: " + InputID);
-					System.out.println("Birthdate: " + BirthDate.get(Index));
+					System.out.println("Birthdate: " + TeacherBirthDate.get(Index));
 					System.out.println("Account Created: " + UserCreationDate.get(Index));
 					System.out.println("Department: " + Department.get(Index));
 					}
@@ -203,9 +210,9 @@ do {
 				InputID = reader.readLine();
 				if(RegistrarID.contains(InputID)) {
 					int Index = RegistrarID.indexOf(InputID);
-					System.out.println("Name: " + Name.get(Index));
+					System.out.println("Name: " + RegistrarName.get(Index));
 					System.out.println("Registrar ID: " + InputID);
-					System.out.println("Birthdate: " + BirthDate.get(Index));
+					System.out.println("Birthdate: " + RegistrarBirthDate.get(Index));
 					System.out.println("Account Created: " + UserCreationDate.get(Index));
 					System.out.println("Role: " + Role.get(Index));
 					}
