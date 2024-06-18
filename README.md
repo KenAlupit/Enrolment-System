@@ -1,4 +1,4 @@
-# Enrolment-System
+# Enrolment System
 
 A simple enrollment system that enables students, teachers, and registrar to enroll/register into a school. Each user information such as their name, birthdate, account creation date, ID number, course and year level(if a student), department(if a teacher), and role(if a registrar) is stored into the program (each in their respective classes) and users can access that information with their ID numbers.
 
